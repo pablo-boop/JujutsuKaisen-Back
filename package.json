@@ -1,0 +1,23 @@
+{
+  "name": "jujutsukaisen-back",
+  "version": "1.0.0",
+  "description": "Projeto Nodejs back-end de final de Sprint, inspirado no anime Jujutsu Kaisen",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "backend",
+    "javascript"
+  ],
+  "author": "Pablo Couto",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
