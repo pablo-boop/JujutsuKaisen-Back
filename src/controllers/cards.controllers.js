@@ -22,9 +22,9 @@ export const getCardById = (req, res) => {
 }
 
 export const createCard = (req, res) => {
-    const {name, img , description, atk, def, level} = req.body;
+    const {name, type, img , description, atk, def, level} = req.body;
 
-    const card = new Card(name, img, description, atk, def, level)
+    const card = new Card(name, type, img, description, atk, def, level)
     list.addCard(card)
 
     return res.status(200).send({ message: "Card criado!", card})
