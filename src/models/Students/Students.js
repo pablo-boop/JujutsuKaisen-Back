@@ -15,7 +15,7 @@ export class StudentList {
     //C.R.U.D completo
 
     //Get all Students
-    getStudent() {
+    getAllStudent() {
         return this.Students;
     }
 

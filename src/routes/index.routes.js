@@ -1,5 +1,6 @@
 import { Router } from "express";
 import cardsRouter from "./cards.routes.js";
+import studentsRouter from "./students.routes.js";
 
 const router = Router();
 
@@ -8,5 +9,6 @@ router.get("/", (req, res) => {
 });
 
 router.use("/cards", cardsRouter);
+router.use("/students", studentsRouter);
 
 export default router;
