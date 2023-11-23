@@ -1,11 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
 
 export class Card {
-    constructor(name, type, img, description, atk, def, level) {
+    constructor(name, type, img, typeDescription, description, atk, def, level) {
         this.id = this.generateId();
         this.name = name;
         this.type = type;
         this.img = img;
+        this.typeDescription = typeDescription;
         this.description = description;
         this.atk = atk;
         this.def = def;
@@ -39,7 +40,7 @@ export class CardList {
         return param;
     }
 
-    updateCard(id, name, type, img, description, atk, def, level) {
+    updateCard(id, name, type, img, typeDescription, description, atk, def, level) {
         const card = this.getCardById(id)
 
         if (!card) {
@@ -49,6 +50,7 @@ export class CardList {
         card.name = name;
         card.type = type;
         card.img = img;
+        card.typeDescription = typeDescription;
         card.description = description;
         card.atk = atk;
         card.def = def;
@@ -70,9 +72,9 @@ export class CardList {
         }
     }
 
-    emptyInputs(name, type, img, description, atk, def, level) {
+    emptyInputs(name, type, img, typeDescription, description, atk, def, level) {
 
-        if(name == "" || type == "" || img == "" || description == "" || atk == "" || def == "" || level == "") {
+        if(name == "" || type == "" || img == "" || typeDescription == "" || description == "" || atk == "" || def == "" || level == "") {
             return true
         } else {
             return false

@@ -22,9 +22,9 @@ export const getCardById = (req, res) => {
 }
 
 export const createCard = (req, res) => {
-    const { name, type, img, description, atk, def, level } = req.body;
+    const { name, type, img, typeDescription, description, atk, def, level } = req.body;
 
-    const card = new Card(name, type, img, description, atk, def, level)
+    const card = new Card(name, type, img, typeDescription,  description, atk, def, level)
     list.addCard(card)
 
     return res.status(201).send({ message: "Card criado!", card })
@@ -32,13 +32,13 @@ export const createCard = (req, res) => {
 
 export const updateCards = (req, res) => {
     const { id } = req.params;
-    const { name, type, img, description, atk, def, level } = req.body;
+    const { name, type, img, typeDescription, description, atk, def, level } = req.body;
 
     const card = list.getCardById(id)
 
     if (!card) res.status(404).send({ message: "Card não encontrado!" });
 
-    list.updateCard(id, name, type, img, description, atk, def, level)
+    list.updateCard(id, name, type, img, typeDescription, description, atk, def, level)
     return res.send(card);
 };
 
