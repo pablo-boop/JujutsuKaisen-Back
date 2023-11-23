@@ -1,10 +1,16 @@
+import { v4 as uuidv4 } from "uuid";
+
 export class Student {
     constructor(id, name, age, email, description) {
-        this.id = id;
+        this.id = this.generateId();
         this.name = name;
         this.age = age;
         this.email = email;
         this.description = description;
+    }
+
+    generateId() {
+        return uuidv4();
     }
 }
 export class StudentList {
@@ -39,7 +45,6 @@ export class StudentList {
             return null;
         }
 
-        student.id = id;
         student.name = name;
         student.age = age;
         student.email = email;
