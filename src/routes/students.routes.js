@@ -12,8 +12,8 @@ const studentsRouter = Router();
 
 studentsRouter.get("/", getAllStudent);
 studentsRouter.get("/:id", getStudentByID);
-studentsRouter.get("/", createStudent);
-studentsRouter.get("/:id", updateStudent);
-studentsRouter.get("/:id", deleteStudent);
+studentsRouter.post("/", createStudent);
+studentsRouter.put("/:id", updateStudent);
+studentsRouter.delete("/:id", deleteStudent);
 
 export default studentsRouter;
