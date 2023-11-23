@@ -24,16 +24,6 @@ export const getCardById = (req, res) => {
 export const createCard = (req, res) => {
     const {name, img , description, atk, def, level} = req.body;
 
-    const cardAlreadyExists = list.cards.filter((card) => {
-        if(card.name == name) {
-            return true
-        }
-    })
-
-    if(cardAlreadyExists) {
-        return res.status(400).send({ message: "Card já cadastrado!" })
-    }
-
     const card = new Card(name, img, description, atk, def, level)
     list.addCard(card)
 

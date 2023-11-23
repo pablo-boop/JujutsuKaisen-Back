@@ -69,12 +69,6 @@ export class CardList {
     }
 
     emptyInputs(name, img, description, atk, def, level) {
-        const name = name;
-        const img = img;
-        const description = description;
-        const atk = atk;
-        const def = def;
-        const level = level;
 
         if(name == "" || img == "" || description == "" || atk == "" || def == "" || level == "") {
             return true
