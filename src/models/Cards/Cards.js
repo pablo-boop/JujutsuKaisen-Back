@@ -14,7 +14,7 @@ export class Card {
     }
 
     generateId() {
-        return uuidv4();
+        return Math.floor(Math.random() * 1000)
     }
 }
 
