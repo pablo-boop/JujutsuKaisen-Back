@@ -1,43 +1,48 @@
+// Importando a função uuidv4 do pacote uuid para gerar IDs únicos
 import { v4 as uuidv4 } from "uuid";
 
+// Classe Student para representar um estudante
 export class Student {
+    // Construtor da classe Student
     constructor(name, age, email, description) {
-        this.id = this.generateId();
-        this.name = name;
-        this.age = age;
-        this.email = email;
-        this.description = description;
+        this.id = this.generateId(); // Gerando um ID único para o estudante
+        this.name = name; // Nome do estudante
+        this.age = age; // Idade do estudante
+        this.email = email; // Email do estudante
+        this.description = description; // Descrição do estudante
     }
 
+    // Método para gerar um ID único
     generateId() {
         return uuidv4();
     }
 }
+
+// Classe StudentList para representar uma lista de estudantes
 export class StudentList {
+    // Construtor da classe StudentList
     constructor() {
-        this.Students = [];
+        this.Students = []; // Array para armazenar os estudantes
     }
 
-    //C.R.U.D completo
-
-    //Get all Students
+    // Método para obter todos os estudantes
     getAllStudent() {
         return this.Students;
     }
 
-    //Get Student by ID
+    // Método para obter um estudante por ID
     getStudentByID(id) {
         const student = this.Students.find((student) => student.id == id);
         return student;
     }
 
-    //Add Student
+    // Método para adicionar um estudante
     addStudent(student) {
         this.Students.push(student);
         return student;
     }
 
-    //Update Student
+    // Método para atualizar um estudante
     updateStudent(id, name, age, email, description) {
         const student = this.getStudentByID(id)
 
@@ -53,12 +58,13 @@ export class StudentList {
         return student
     }
 
+    // Método para deletar um estudante
     deleteStudent(id) {
         this.Students = this.Students.filter((student) => student.id !== id);
     }
 
-     //C.R.U.D validations
-     isURLValida(url) {
+    // Método para validar uma URL
+    isURLValida(url) {
         if(url.match(/\.(png)$/) != null){
             return true;
         } else {
@@ -66,8 +72,8 @@ export class StudentList {
         }
     }
 
+    // Método para verificar se os campos de entrada estão vazios
     emptyInputs(name, age, email, description) {
-
         if(name == "" || age == "" || email == "" || description == "") {
             return true
         } else {

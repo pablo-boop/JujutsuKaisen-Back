@@ -1,45 +1,54 @@
+// Importando a função uuidv4 do pacote uuid para gerar IDs únicos
 import { v4 as uuidv4 } from "uuid";
 
+// Classe Card para representar um cartão
 export class Card {
+    // Construtor da classe Card
     constructor(name, type, img, typeDescription, description, atk, def, level) {
-        this.id = this.generateId();
-        this.name = name;
-        this.type = type;
-        this.img = img;
-        this.typeDescription = typeDescription;
-        this.description = description;
-        this.atk = atk;
-        this.def = def;
-        this.level = level;
+        this.id = this.generateId(); // Gerando um ID único para o cartão
+        this.name = name; // Nome do cartão
+        this.type = type; // Tipo do cartão
+        this.img = img; // Imagem do cartão
+        this.typeDescription = typeDescription; // Descrição do tipo do cartão
+        this.description = description; // Descrição do cartão
+        this.atk = atk; // Ataque do cartão
+        this.def = def; // Defesa do cartão
+        this.level = level; // Nível do cartão
     }
 
+    // Método para gerar um ID único
     generateId() {
         return Math.floor(Math.random() * 1000)
     }
 }
 
+// Classe CardList para representar uma lista de cartões
 export class CardList {
+    // Construtor da classe CardList
     constructor() {
-        this.cards = [];
-        this.deckOne = [];
-        this.deckTwo = [];
+        this.cards = []; // Array para armazenar os cartões
+        this.deckOne = []; // Array para armazenar o deck um
+        this.deckTwo = []; // Array para armazenar o deck dois
     }
 
-    //CRUD
+    // Método para obter todos os cartões
     getCards() {
         return this.cards;
     }
 
+    // Método para obter um cartão por ID
     getCardById(id) {
         const card = this.cards.find((card) => card.id == id);
         return card;
     }
 
+    // Método para adicionar um cartão
     addCard(param) {
         this.cards.push(param);
         return param;
     }
 
+    // Método para atualizar um cartão
     updateCard(id, name, type, img, typeDescription, description, atk, def, level) {
         const card = this.getCardById(id)
 
@@ -59,11 +68,12 @@ export class CardList {
         return card;
     }
 
+    // Método para deletar um cartão
     deleteCard(id) {
         this.cards = this.cards.filter((card) => card.id !== id)
     }
 
-    //CRUD Validatons
+    // Método para validar uma URL
     isURLValida(url) {
         if(url.match(/\.(png)$/) != null){
             return true;
@@ -72,8 +82,8 @@ export class CardList {
         }
     }
 
+    // Método para verificar se os campos de entrada estão vazios
     emptyInputs(name, type, img, typeDescription, description, atk, def, level) {
-
         if(name == "" || type == "" || img == "" || typeDescription == "" || description == "" || atk == "" || def == "" || level == "") {
             return true
         } else {
