@@ -44,6 +44,10 @@ export class CardList {
 
     // Método para adicionar um cartão
     addCard(param) {
+        
+        if(this.emptyInputs) {
+            return console.error('erro');
+        }
         this.cards.push(param);
         return param;
     }
