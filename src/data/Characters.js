@@ -1,15 +1,18 @@
+// Este é um array de objetos chamado "characters". Cada objeto representa um personagem.
 const characters = [
+    // Cada personagem é um objeto com várias propriedades.
     {
-        id: 1,
-        name: 'Satoru Gojo',
-        type: 'Feiticeiro',
-        img: 'https://static.wikia.nocookie.net/animeverso/images/f/fe/Satoru_Gojo_%28Jump_GIGA%29.png/revision/latest/scale-to-width-down/1000?cb=20230808030559&path-prefix=pt-br',
-        typeDescription:'Tecnica Amaldicoada',
-        description: 'Ilimitado e Six-eye',
-        atk: 150,
-        def: 150,
-        level: 'Especial'
+        id: 1, // A propriedade "id" é um identificador único para cada personagem.
+        name: 'Satoru Gojo', // A propriedade "name" é o nome do personagem.
+        type: 'Feiticeiro', // A propriedade "type" é o tipo do personagem.
+        img: 'https://static.wikia.nocookie.net/animeverso/images/f/fe/Satoru_Gojo_%28Jump_GIGA%29.png/revision/latest/scale-to-width-down/1000?cb=20230808030559&path-prefix=pt-br', // A propriedade "img" é a URL de uma imagem do personagem.
+        typeDescription:'Tecnica Amaldicoada', // A propriedade "typeDescription" descreve o tipo do personagem.
+        description: 'Ilimitado e Six-eye', // A propriedade "description" é uma descrição do personagem.
+        atk: 150, // A propriedade "atk" é o valor de ataque do personagem.
+        def: 150, // A propriedade "def" é o valor de defesa do personagem.
+        level: 'Especial' // A propriedade "level" é o nível do personagem.
     },
+    // O array continua com mais objetos, cada um representando um personagem diferente.
     {
         id: 2,
         name: 'Suguru Geto',
