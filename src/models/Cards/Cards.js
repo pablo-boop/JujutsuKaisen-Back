@@ -18,7 +18,7 @@ export class Card {
 
     // Método para gerar um ID único
     generateId() {
-        return Math.floor(Math.random() * 1000)
+        return uuidv4()
     }
 }
 
