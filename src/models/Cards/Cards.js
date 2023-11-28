@@ -73,15 +73,6 @@ export class CardList {
         this.cards = this.cards.filter((card) => card.id !== id)
     }
 
-    // Método para validar uma URL
-    isURLValida(url) {
-        if(url.match(/\.(png)$/) != null){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     // Método para verificar se os campos de entrada estão vazios
     emptyInputs(name, type, img, typeDescription, description, atk, def, level) {
         if(name == "" || type == "" || img == "" || typeDescription == "" || description == "" || atk == "" || def == "" || level == "") {
