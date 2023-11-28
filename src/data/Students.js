@@ -1,10 +1,12 @@
+// Declaração de um array chamado 'students'. Cada elemento do array é um objeto que representa um estudante.
 const students = [
     {
-        name: "Caio Ciccarelli",
-        age: 16,
-        email: "ciccarelli.ca@gmail.com",
-        description: "Um otário aí com TDAH"
+        name: "Caio Ciccarelli", // Propriedade 'name' que guarda o nome do estudante
+        age: 16, // Propriedade 'age' que guarda a idade do estudante
+        email: "ciccarelli.ca@gmail.com", // Propriedade 'email' que guarda o email do estudante
+        description: "Um otário aí com TDAH" // Propriedade 'description' que guarda uma descrição do estudante
     },
+    // O mesmo padrão se repete para cada objeto (estudante) no array
     {
         name: "Lucas Rios",
         age: 17,
