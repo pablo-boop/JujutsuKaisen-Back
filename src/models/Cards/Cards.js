@@ -18,8 +18,7 @@ export class Card {
 
     // Método para gerar um ID único
     generateId() {
-
-        
+        return uuidv4()
     }
 }
 

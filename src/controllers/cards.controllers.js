@@ -8,15 +8,15 @@ const list = new CardList();
 // Função para obter todas as cartas
 export const getCards = (req, res) => {
     // Obtendo as cartas da lista
-    const cards = list.getCards();
-    const allCards = cards.concat(characters)
+    const data = characters;
+    const cards = list.getCards().concat(data);
 
     // Se não houver cartas, retorna um erro
     if (!cards) {
         return res.status(400).send({ message: "Cards não cadastrados!" })
     }
     // Retorna as cartas
-    return res.status(200).send({ totalCards: allCards.length, allCards })
+    return res.status(200).send({ totalCards: cards.length, cards })
 }
 
 // Função para obter uma carta por ID
@@ -43,9 +43,9 @@ export const createCard = (req, res) => {
     const card = new Card(name, type, img, typeDescription,  description, atk, def, level)
     // Adicionando a carta à lista
     list.addCard(card)
-
     // Retorna a carta criada
     return res.status(201).send({ message: "Card criado!", card })
+    
 }
 
 // Função para atualizar uma carta
