@@ -1,5 +1,5 @@
 // Este é um array de objetos chamado "characters". Cada objeto representa um personagem.
-const characters = [
+export const characters = [
     // Cada personagem é um objeto com várias propriedades.
     {
         id: 1, // A propriedade "id" é um identificador único para cada personagem.

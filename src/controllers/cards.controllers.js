@@ -1,5 +1,6 @@
 // Importando as classes Card e CardList do módulo Cards.js
 import { Card, CardList } from '../models/Cards/Cards.js'
+import { characters } from '../data/Characters.js';
 
 // Criando uma nova lista de cartas
 const list = new CardList();
@@ -8,13 +9,14 @@ const list = new CardList();
 export const getCards = (req, res) => {
     // Obtendo as cartas da lista
     const cards = list.getCards();
+    const allCards = cards.concat(characters)
 
     // Se não houver cartas, retorna um erro
     if (!cards) {
         return res.status(400).send({ message: "Cards não cadastrados!" })
     }
     // Retorna as cartas
-    return res.status(200).send({ totalCards: cards.length, cards })
+    return res.status(200).send({ totalCards: allCards.length, allCards })
 }
 
 // Função para obter uma carta por ID

@@ -18,7 +18,8 @@ export class Card {
 
     // Método para gerar um ID único
     generateId() {
-        return uuidv4()
+
+        
     }
 }
 
@@ -75,7 +76,7 @@ export class CardList {
 
     // Método para verificar se os campos de entrada estão vazios
     emptyInputs(name, type, img, typeDescription, description, atk, def, level) {
-        if(name == "" || type == "" || img == "" || typeDescription == "" || description == "" || atk == "" || def == "" || level == "") {
+        if (name == "" || type == "" || img == "" || typeDescription == "" || description == "" || atk == "" || def == "" || level == "") {
             return true
         } else {
             return false
