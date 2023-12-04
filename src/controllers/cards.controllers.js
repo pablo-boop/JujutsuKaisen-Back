@@ -8,9 +8,25 @@ const list = new CardList();
 // Função para obter todas as cartas
 export const getCards = (req, res) => {
     // Obtendo as cartas da lista
-    const data = characters;
-    const cards = list.getCards().concat(data);
+    let data = []; // Inicializa a variável data como um array vazio
 
+    characters.forEach((character) => {
+        const newCard = new Card(
+            character.id,
+            character.name,
+            character.type,
+            character.img,
+            character.typeDescription,
+            character.description,
+            character.atk,
+            character.def,
+            character.level
+        );
+    
+        data.push(newCard); // Adiciona o novo cartão ao array data
+    });
+    
+    const cards = list.getCards().concat(data);
     // Se não houver cartas, retorna um erro
     if (!cards) {
         return res.status(400).send({ message: "Cards não cadastrados!" })
