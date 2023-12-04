@@ -4,8 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 // Classe Card para representar um cartão
 export class Card {
     // Construtor da classe Card
-    constructor(name, type, img, typeDescription, description, atk, def, level) {
-        this.id = this.generateId(); // Gerando um ID único para o cartão
+    constructor(id, name, type, img, typeDescription, description, atk, def, level) {
+        this.uuid = this.generateId(); // Gerando um ID único para o cartão através do uuidv4
+        this.id = id; //Id de carta
         this.name = name; // Nome do cartão
         this.type = type; // Tipo do cartão
         this.img = img; // Imagem do cartão
