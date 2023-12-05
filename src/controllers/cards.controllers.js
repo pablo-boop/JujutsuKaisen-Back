@@ -81,3 +81,27 @@ export const deleteCard = (req, res) => {
     // Retorna a carta deletada
     return res.send(card);
 };
+
+// Função para filtrar cartas por ataque
+export const filterCardsByAtk = (req, res) => {
+    // Obtendo o ataque da requisição
+    const { atk } = req.params;
+
+    // Filtrando as cartas por ataque
+    const cards = list.filterCardsByAtk(atk);
+
+    // Retorna as cartas filtradas
+    return res.send(cards);
+};
+
+// Função para filtrar cartas por defesa
+export const filterCardsByDef = (req, res) => {
+    // Obtendo a defesa da requisição
+    const { def } = req.params;
+
+    // Filtrando as cartas por defesa
+    const cards = list.filterCardsByDef(def);
+
+    // Retorna as cartas filtradas
+    return res.send(cards);
+};

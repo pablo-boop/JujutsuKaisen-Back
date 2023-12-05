@@ -7,7 +7,9 @@ import {
     getCardById,
     createCard,
     updateCards,
-    deleteCard
+    deleteCard,
+    filterCardsByAtk,
+    filterCardsByDef
 } from '../controllers/cards.controllers.js';
 
 // Criando um novo roteador
@@ -27,6 +29,12 @@ cardsRouter.put("/:id", updateCards);
 
 // Associando a função deleteCard à rota DELETE "/:id"
 cardsRouter.delete("/:id", deleteCard);
+
+// Associando a função filterCardsByAtk à rota GET "/filter/atk/:atk"
+cardsRouter.get("/filter/:atk", filterCardsByAtk);
+
+// Associando a função filterCardsByDef à rota GET "/filter/def/:def"
+cardsRouter.get("/filter/:def", filterCardsByDef);
 
 // Exportando o roteador
 export default cardsRouter;
