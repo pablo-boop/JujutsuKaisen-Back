@@ -28,10 +28,21 @@ export const getCards = (req, res) => {
     const { atk, def } = req.query;
 
     if (atk || def) {
-        const filter = cards.filter((card) => (
-            card.atk == atk || card.def == def
-        ))
-        return res.status(200).send({ message: `Card encontrado com o atk:${atk} e def:${def}`, filter })
+        let filter = [];
+        let message = '';
+    
+        if (atk && def) {
+            filter = cards.filter((card) => card.atk == atk && card.def == def);
+            message = `Card encontrado com o atk:${atk} e def:${def}`;
+        } else if (atk) {
+            filter = cards.filter((card) => card.atk == atk);
+            message = `Card encontrado com o atk:${atk}`;
+        } else if (def) {
+            filter = cards.filter((card) => card.def == def);
+            message = `Card encontrado com o def:${def}`;
+        }
+    
+        return res.status(200).send({ message, filter });
     }
 
     // Se não houver cartas, retorna um erro
