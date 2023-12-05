@@ -28,11 +28,6 @@ cardsRouter.put("/:id", updateCards);
 // Associando a função deleteCard à rota DELETE "/:id"
 cardsRouter.delete("/:id", deleteCard);
 
-// // Associando a função filterCardsByAtk à rota GET "/filter/atk/:atk"
-// cardsRouter.get("/:atk", filterCardsByAtk);
-
-// // Associando a função filterCardsByDef à rota GET "/filter/def/:def"
-// cardsRouter.get("/:def", filterCardsByDef);
 
 // Exportando o roteador
 export default cardsRouter;
