@@ -22,24 +22,28 @@ characters.forEach((character) => {
 });
 export const getCards = (req, res) => {
     // Obtendo as cartas da lista
-    let data = []; // Inicializa a variável data como um array vazio
-    const cards = list.getCards().concat(data);
+    const cards = list.getCards();
 
     const { atk, def } = req.query;
 
     if (atk && def) {
         const filter = cards.filter((card) => (
-            card.atk == atk && card.def == def
-        ))
-        return res.status(200).send({ message: `Card encontrado com o atk:${atk} e def:${def}`, filter})
+            card.atk === Number(atk) && card.def === Number(def)
+        ));
+        if (filter.length > 0) {
+            return res.status(200).send({ message: `Card encontrado com o atk:${atk} e def:${def}`, filter});
+        } else {
+            return res.status(404).send({ message: `Nenhum card encontrado com o atk:${atk} e def:${def}`});
+        }
     }
 
     // Se não houver cartas, retorna um erro
-    if (!cards) {
-        return res.status(400).send({ message: "Cards não cadastrados!" })
+    if (cards.length === 0) {
+        return res.status(400).send({ message: "Cards não cadastrados!" });
     }
+
     // Retorna as cartas
-    return res.status(200).send({ totalCards: cards.length, cards })
+    return res.status(200).send({ totalCards: cards.length, cards });
 }
 
 // Função para obter uma carta por ID
