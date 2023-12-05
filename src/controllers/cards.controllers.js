@@ -27,9 +27,9 @@ export const getCards = (req, res) => {
 
     const { atk, def } = req.query;
 
-    if (atk && def) {
+    if (atk || def) {
         const filter = cards.filter((card) => (
-            card.atk == atk && card.def == def
+            card.atk == atk || card.def == def
         ))
         return res.status(200).send({ message: `Card encontrado com o atk:${atk} e def:${def}`, filter })
     }
