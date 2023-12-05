@@ -6,27 +6,34 @@ import { characters } from '../data/Characters.js';
 const list = new CardList();
 
 // Função para obter todas as cartas
+characters.forEach((character) => {
+    const newCard = new Card(
+        character.id,
+        character.name,
+        character.type,
+        character.img,
+        character.typeDescription,
+        character.description,
+        character.atk,
+        character.def,
+        character.level
+    );
+    list.addCard(newCard)
+});
 export const getCards = (req, res) => {
     // Obtendo as cartas da lista
     let data = []; // Inicializa a variável data como um array vazio
-
-    characters.forEach((character) => {
-        const newCard = new Card(
-            character.id,
-            character.name,
-            character.type,
-            character.img,
-            character.typeDescription,
-            character.description,
-            character.atk,
-            character.def,
-            character.level
-        );
-    
-        data.push(newCard); // Adiciona o novo cartão ao array data
-    });
-    
     const cards = list.getCards().concat(data);
+
+    const { atk, def } = req.query;
+
+    if (atk && def) {
+        const filter = cards.filter((card) => (
+            card.atk == atk && card.def == def
+        ))
+        return res.status(200).send({ message: `Card encontrado com o atk:${atk} e def:${def}`, filter})
+    }
+
     // Se não houver cartas, retorna um erro
     if (!cards) {
         return res.status(400).send({ message: "Cards não cadastrados!" })
@@ -56,18 +63,19 @@ export const createCard = (req, res) => {
     const { name, type, img, typeDescription, description, atk, def, level } = req.body;
 
     // Criando uma nova carta
-    const card = new Card(name, type, img, typeDescription,  description, atk, def, level)
+    const card = new Card(name, type, img, typeDescription, description, atk, def, level)
     // Adicionando a carta à lista
     list.addCard(card)
     // Retorna a carta criada
     return res.status(201).send({ message: "Card criado!", card })
-    
+
 }
 
 // Função para atualizar uma carta
 export const updateCards = (req, res) => {
     // Obtendo o ID e os dados da carta da requisição
     const { id } = req.params;
+    console.log("to aqui:", id);
     const { name, type, img, typeDescription, description, atk, def, level } = req.body;
 
     // Buscando a carta pelo ID
