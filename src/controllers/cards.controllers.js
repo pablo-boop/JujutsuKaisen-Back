@@ -6,28 +6,41 @@ import { characters } from "../data/Characters.js";
 const list = new CardList();
 
 // Função para obter todas as cartas
-export const getCards = (req, res) => {
-  // Obtendo as cartas da lista
-  const data = characters;
-  let cards = list.getCards().concat(data);
-
-  // Obtendo os parâmetros de consulta
-  const { atk, def } = req.query;
-
-  // Filtrando as cartas por ataque e defesa, se os parâmetros atk e def forem fornecidos
-  if (atk && def) {
-    return cards.filter(
-      (card) => card.atk === Number(atk) && card.def === Number(def)
+characters.forEach((character) => {
+    const newCard = new Card(
+        character.id,
+        character.name,
+        character.type,
+        character.img,
+        character.typeDescription,
+        character.description,
+        character.atk,
+        character.def,
+        character.level
     );
-  }
-  // Se não houver cartas, retorna um erro
-  if (!cards.length) {
-    return res.status(400).send({ message: "Cards não encontrados!" });
-  }
+    list.addCard(newCard)
+});
+export const getCards = (req, res) => {
+    // Obtendo as cartas da lista
+    let data = []; // Inicializa a variável data como um array vazio
+    const cards = list.getCards().concat(data);
 
-  // Retorna as cartas
-  return res.status(200).send({ totalCards: cards.length, cards });
-};
+    const { atk, def } = req.query;
+
+    if (atk && def) {
+        const filter = cards.filter((card) => (
+            card.atk == atk && card.def == def
+        ))
+        return res.status(200).send({ message: `Card encontrado com o atk:${atk} e def:${def}`, filter})
+    }
+
+    // Se não houver cartas, retorna um erro
+    if (!cards) {
+        return res.status(400).send({ message: "Cards não cadastrados!" })
+    }
+    // Retorna as cartas
+    return res.status(200).send({ totalCards: cards.length, cards })
+}
 
 // Função para obter uma carta por ID
 export const getCardById = (req, res) => {
@@ -48,33 +61,24 @@ export const getCardById = (req, res) => {
 
 // Função para criar uma nova carta
 export const createCard = (req, res) => {
-  // Obtendo os dados da carta da requisição
-  const { name, type, img, typeDescription, description, atk, def, level } =
-    req.body;
+    // Obtendo os dados da carta da requisição
+    const { name, type, img, typeDescription, description, atk, def, level } = req.body;
 
-  // Criando uma nova carta
-  const card = new Card(
-    name,
-    type,
-    img,
-    typeDescription,
-    description,
-    atk,
-    def,
-    level
-  );
-  // Adicionando a carta à lista
-  list.addCard(card);
-  // Retorna a carta criada
-  return res.status(201).send({ message: "Card criado!", card });
-};
+    // Criando uma nova carta
+    const card = new Card(name, type, img, typeDescription, description, atk, def, level)
+    // Adicionando a carta à lista
+    list.addCard(card)
+    // Retorna a carta criada
+    return res.status(201).send({ message: "Card criado!", card })
+
+}
 
 // Função para atualizar uma carta
 export const updateCards = (req, res) => {
-  // Obtendo o ID e os dados da carta da requisição
-  const { id } = req.params;
-  const { name, type, img, typeDescription, description, atk, def, level } =
-    req.body;
+    // Obtendo o ID e os dados da carta da requisição
+    const { id } = req.params;
+    console.log("to aqui:", id);
+    const { name, type, img, typeDescription, description, atk, def, level } = req.body;
 
   // Buscando a carta pelo ID
   const card = list.getCardById(id);

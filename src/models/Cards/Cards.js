@@ -39,7 +39,7 @@ export class CardList {
 
     // Método para obter um cartão por ID
     getCardById(id) {
-        const card = this.cards.find((card) => card.id == id);
+        const card = this.cards.find((card) => card.uuid == id);
         return card;
     }
 
@@ -70,8 +70,9 @@ export class CardList {
     }
 
     // Método para deletar um cartão
-    deleteCard(id) {
-        this.cards = this.cards.filter((card) => card.id !== id)
+    deleteCard(uuid) {
+        console.log(uuid);
+        return this.cards = this.cards.filter((card) => card.uuid !== uuid)
     }
 
     // Método para verificar se os campos de entrada estão vazios
