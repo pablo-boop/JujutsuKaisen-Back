@@ -16,7 +16,7 @@ export const getCards = (req, res) => {
 
   // Filtrando as cartas por ataque e defesa, se os parâmetros atk e def forem fornecidos
   if (atk && def) {
-    cards = cards.filter(
+    return cards.filter(
       (card) => card.atk === Number(atk) && card.def === Number(def)
     );
   }
