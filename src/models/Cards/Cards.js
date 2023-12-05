@@ -74,16 +74,6 @@ export class CardList {
         this.cards = this.cards.filter((card) => card.id !== id)
     }
 
-    // Método para filtrar cartões por ataque
-    filterCardsByAtk(atk) {
-        return this.cards.filter(card => card.atk === atk);
-    }
-
-    // Método para filtrar cartões por defesa
-    filterCardsByDef(def) {
-        return this.cards.filter(card => card.def === def);
-    }
-
     // Método para verificar se os campos de entrada estão vazios
     emptyInputs(name, type, img, typeDescription, description, atk, def, level) {
         if (name == "" || type == "" || img == "" || typeDescription == "" || description == "" || atk == "" || def == "" || level == "") {

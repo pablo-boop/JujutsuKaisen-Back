@@ -1,107 +1,115 @@
 // Importando as classes Card e CardList do módulo Cards.js
-import { Card, CardList } from '../models/Cards/Cards.js'
-import { characters } from '../data/Characters.js';
+import { Card, CardList } from "../models/Cards/Cards.js";
+import { characters } from "../data/Characters.js";
 
 // Criando uma nova lista de cartas
 const list = new CardList();
 
 // Função para obter todas as cartas
 export const getCards = (req, res) => {
-    // Obtendo as cartas da lista
-    const data = characters;
-    const cards = list.getCards().concat(data);
+  // Obtendo as cartas da lista
+  const data = characters;
+  let cards = list.getCards().concat(data);
 
-    // Se não houver cartas, retorna um erro
-    if (!cards) {
-        return res.status(400).send({ message: "Cards não cadastrados!" })
-    }
-    // Retorna as cartas
-    return res.status(200).send({ totalCards: cards.length, cards })
-}
+  // Obtendo os parâmetros de consulta
+  const { atk, def } = req.query;
+
+  // Filtrando as cartas por ataque e defesa, se os parâmetros atk e def forem fornecidos
+  if (atk && def) {
+    cards = cards.filter(
+      (card) => card.atk === Number(atk) && card.def === Number(def)
+    );
+  }
+  // Se não houver cartas, retorna um erro
+  if (!cards.length) {
+    return res.status(400).send({ message: "Cards não encontrados!" });
+  }
+
+  // Retorna as cartas
+  return res.status(200).send({ totalCards: cards.length, cards });
+};
 
 // Função para obter uma carta por ID
 export const getCardById = (req, res) => {
-    // Obtendo o ID da requisição
-    const { id } = req.params;
-    // Buscando a carta pelo ID
-    const card = list.getCardById(id)
+  // Obtendo o ID da requisição
+  const { id } = req.params;
+  // Buscando a carta pelo ID
+  const card = list.getCardById(id);
 
-    // Se a carta não for encontrada, retorna um erro
-    if (!card) {
-        return res.status(400).send({ message: "Card não encontrado!" })
-    }
-    // Retorna a carta encontrada
-    return res.status(200).send({ message: `Card com id ${id}, encontrado!`, card })
-}
+  // Se a carta não for encontrada, retorna um erro
+  if (!card) {
+    return res.status(400).send({ message: "Card não encontrado!" });
+  }
+  // Retorna a carta encontrada
+  return res
+    .status(200)
+    .send({ message: `Card com id ${id}, encontrado!`, card });
+};
 
 // Função para criar uma nova carta
 export const createCard = (req, res) => {
-    // Obtendo os dados da carta da requisição
-    const { name, type, img, typeDescription, description, atk, def, level } = req.body;
+  // Obtendo os dados da carta da requisição
+  const { name, type, img, typeDescription, description, atk, def, level } =
+    req.body;
 
-    // Criando uma nova carta
-    const card = new Card(name, type, img, typeDescription,  description, atk, def, level)
-    // Adicionando a carta à lista
-    list.addCard(card)
-    // Retorna a carta criada
-    return res.status(201).send({ message: "Card criado!", card })
-    
-}
+  // Criando uma nova carta
+  const card = new Card(
+    name,
+    type,
+    img,
+    typeDescription,
+    description,
+    atk,
+    def,
+    level
+  );
+  // Adicionando a carta à lista
+  list.addCard(card);
+  // Retorna a carta criada
+  return res.status(201).send({ message: "Card criado!", card });
+};
 
 // Função para atualizar uma carta
 export const updateCards = (req, res) => {
-    // Obtendo o ID e os dados da carta da requisição
-    const { id } = req.params;
-    const { name, type, img, typeDescription, description, atk, def, level } = req.body;
+  // Obtendo o ID e os dados da carta da requisição
+  const { id } = req.params;
+  const { name, type, img, typeDescription, description, atk, def, level } =
+    req.body;
 
-    // Buscando a carta pelo ID
-    const card = list.getCardById(id)
+  // Buscando a carta pelo ID
+  const card = list.getCardById(id);
 
-    // Se a carta não for encontrada, retorna um erro
-    if (!card) res.status(404).send({ message: "Card não encontrado!" });
+  // Se a carta não for encontrada, retorna um erro
+  if (!card) res.status(404).send({ message: "Card não encontrado!" });
 
-    // Atualizando a carta
-    list.updateCard(id, name, type, img, typeDescription, description, atk, def, level)
-    // Retorna a carta atualizada
-    return res.send(card);
+  // Atualizando a carta
+  list.updateCard(
+    id,
+    name,
+    type,
+    img,
+    typeDescription,
+    description,
+    atk,
+    def,
+    level
+  );
+  // Retorna a carta atualizada
+  return res.send(card);
 };
 
 // Função para deletar uma carta
 export const deleteCard = (req, res) => {
-    // Obtendo o ID da requisição
-    const { id } = req.params;
-    // Buscando a carta pelo ID
-    const card = list.getCardById(id);
+  // Obtendo o ID da requisição
+  const { id } = req.params;
+  // Buscando a carta pelo ID
+  const card = list.getCardById(id);
 
-    // Se a carta não for encontrada, retorna um erro
-    if (!card) res.status(404).send({ message: "Card não encontrado!" });
+  // Se a carta não for encontrada, retorna um erro
+  if (!card) res.status(404).send({ message: "Card não encontrado!" });
 
-    // Deletando a carta
-    list.deleteCard(id)
-    // Retorna a carta deletada
-    return res.send(card);
-};
-
-// Função para filtrar cartas por ataque
-export const filterCardsByAtk = (req, res) => {
-    // Obtendo o ataque da requisição
-    const { atk } = req.params;
-
-    // Filtrando as cartas por ataque
-    const cards = list.filterCardsByAtk(atk);
-
-    // Retorna as cartas filtradas
-    return res.send(cards);
-};
-
-// Função para filtrar cartas por defesa
-export const filterCardsByDef = (req, res) => {
-    // Obtendo a defesa da requisição
-    const { def } = req.params;
-
-    // Filtrando as cartas por defesa
-    const cards = list.filterCardsByDef(def);
-
-    // Retorna as cartas filtradas
-    return res.send(cards);
+  // Deletando a carta
+  list.deleteCard(id);
+  // Retorna a carta deletada
+  return res.send(card);
 };
