@@ -8,8 +8,6 @@ import {
     createCard,
     updateCards,
     deleteCard,
-    filterCardsByAtk,
-    filterCardsByDef
 } from '../controllers/cards.controllers.js';
 
 // Criando um novo roteador
