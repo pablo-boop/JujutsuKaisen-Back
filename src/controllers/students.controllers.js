@@ -26,9 +26,7 @@ export const getAllStudent = (req, res) => {
         })
     }
     // Retorna os estudantes
-    return res.status(200).send({
-        totalAlunos: students.length, students
-    })
+    return res.status(200).send({totalAlunos: students.length, students})
 }
 
 // Função para obter um estudante por ID
