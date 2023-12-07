@@ -11,7 +11,7 @@ export const students = [
         name: "Lucas Rios",
         age: 17,
         email: "lucasrios@aluno.senai.br",
-        description: ""
+        description: "Gosto de desenhar"
     },
     {
         name: "Nathan Oliveira",
@@ -29,12 +29,12 @@ export const students = [
         name: "Pablo Couto",
         age: 16,
         email: "pablocouto@aluno.senai.br",
-        description: ""
+        description: "Gosto de programar, jogar video game e assistir animação"
     },
     {
         name: "Rafael Leal",
         age: 16,
         email: "rafael.leal@aluno.senai.br",
-        description: "Estudante do senai"
+        description: "Amo cachorro"
     }
 ]
