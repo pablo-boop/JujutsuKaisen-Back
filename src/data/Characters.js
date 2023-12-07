@@ -5,7 +5,7 @@ export const characters = [
         id: 1, // A propriedade "id" é um identificador único para cada personagem.
         name: 'Satoru Gojo', // A propriedade "name" é o nome do personagem.
         type: 'Feiticeiro', // A propriedade "type" é o tipo do personagem.
-        img: 'https://upload.wikimedia.org/wikipedia/pt/0/02/Satoru_Gojo.png', // A propriedade "img" é a URL de uma imagem do personagem.
+        img: 'https://ongpng.com/wp-content/uploads/2023/09/gojo-satoru-1.png', // A propriedade "img" é a URL de uma imagem do personagem.
         typeDescription:'Tecnica Amaldicoada', // A propriedade "typeDescription" descreve o tipo do personagem.
         description: 'Ilimitado e Six-eye', // A propriedade "description" é uma descrição do personagem.
         atk: 150, // A propriedade "atk" é o valor de ataque do personagem.
@@ -149,7 +149,7 @@ export const characters = [
         id: 14,
         name: 'Ultimate Mechamaru',
         type: 'Feiticeiro',
-        img: 'https://cdn.shopify.com/s/files/1/0561/3086/3278/files/Yuji_holding_the_Mechamaru_communicator.png?v=1638569526',
+        img: 'https://pbs.twimg.com/media/EsazLJVXcAEVZy4.png',
         typeDescription:'Tecnica Amaldicoada',
         description: 'Liberacao da Espada e Canhao Definitivo',
         atk: 80,
@@ -160,7 +160,7 @@ export const characters = [
         id: 15,
         name: 'Momo Nishimiya',
         type: 'Feiticeiro',
-        img: '',
+        img: 'https://i.pinimg.com/originals/02/05/18/0205182e29318f5025a18cd5bd52c7f5.png',
         typeDescription:'Tecnica Amaldicoada',
         description: 'Foice do Vento e Voa',
         atk: 55,
@@ -171,7 +171,7 @@ export const characters = [
         id: 16,
         name: 'Kasumi Miwa(Pobre)',
         type: 'Feiticeiro',
-        img: '',
+        img: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/52d81f79-50b1-4444-905d-3c302b57966e/dgc767e-ff9751a4-23db-4675-8b98-0f2e632491d8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyZDgxZjc5LTUwYjEtNDQ0NC05MDVkLTNjMzAyYjU3OTY2ZVwvZGdjNzY3ZS1mZjk3NTFhNC0yM2RiLTQ2NzUtOGI5OC0wZjJlNjMyNDkxZDgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3fh1TeZ9TF9zQ9qoFQ0R7_EOeOehazRIEYX0ryUAgU8',
         typeDescription:'Tecnica Amaldicoada',
         description: 'Novo Estilo da Sombra',
         atk: 30,
@@ -182,7 +182,7 @@ export const characters = [
         id: 17,
         name: 'Mai Zenin',
         type: 'Feiticeiro',
-        img: '',
+        img: 'https://pbs.twimg.com/media/Er8TdHEUwAAe96l.png',
         typeDescription:'Tecnica Amaldicoada',
         description: 'A Criacao',
         atk: 40,
@@ -193,7 +193,7 @@ export const characters = [
         id: 18,
         name: 'Noritoshi Kamo',
         type: 'Feiticeiro',
-        img: '',
+        img: 'https://static.tvtropes.org/pmwiki/pub/images/noritoshi_kamo.png',
         typeDescription:'Tecnica Amaldicoada',
         description: 'Manipulacao Sanguinea',
         atk: 75,
@@ -204,7 +204,7 @@ export const characters = [
         id: 19,
         name: 'Mahoraga',
         type: 'Maldicao',
-        img: '',
+        img: 'https://tiermaker.com/images/template_images/2022/16227223/jujutsu-kaisen-characters-chapter-237-16227223/mahoraga.png',
         typeDescription: 'Invocacao',
         description: 'Invocacao suprema das 10 sombras',
         atk: 150,
@@ -215,7 +215,7 @@ export const characters = [
         id: 20,
         name: 'Mahito',
         type: 'Maldicao',
-        img: '',
+        img: 'https://cdn141.picsart.com/348990022008211.png',
         typeDescription: 'Tecnica Amaldicoada',
         description: 'Transfiguracao Inerte',
         atk: 105,
@@ -226,7 +226,7 @@ export const characters = [
         id: 21,
         name: 'Jogo',
         type: 'Maldicao',
-        img: '',
+        img: 'https://pbs.twimg.com/media/F7veNP6XMAAj3oO.png',
         typeDescription: 'Tecnica Amaldicoada',
         description: 'Pirotecnico',
         atk: 110,
@@ -235,20 +235,9 @@ export const characters = [
     },
     {
         id: 22,
-        name: 'Dagon',
-        type: 'Maldicao',
-        img: '',
-        typeDescription: 'Tecnica Amaldicoada',
-        description: 'Shikigamis e Ondas do Desastre ',
-        atk: 100,
-        def: 95,
-        level: 'Especial'
-    },
-    {
-        id: 23,
         name: 'Hanami',
         type: 'Maldicao',
-        img: '',
+        img: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/db781c2f-75f5-4db4-8e6a-75c2c542f51a/degabxa-3a589073-d38e-4a70-becc-7f8e56f72847.png/v1/fill/w_1024,h_755/jujutsu_kaisen_hanami_render_by_themightybattlesquid_degabxa-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzU1IiwicGF0aCI6IlwvZlwvZGI3ODFjMmYtNzVmNS00ZGI0LThlNmEtNzVjMmM1NDJmNTFhXC9kZWdhYnhhLTNhNTg5MDczLWQzOGUtNGE3MC1iZWNjLTdmOGU1NmY3Mjg0Ny5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.mLqBwG1mG4ZzuimelfGpRZW8DpOymxE-7SbN8H3AGAA',
         typeDescription: 'Tecnica Amaldicoada',
         description: 'Brotos amaldicoados e Jardim de flores',
         atk: 95,
@@ -256,47 +245,14 @@ export const characters = [
         level: 'Especial'
     },
     {
-        id: 24,
+        id: 23,
         name: 'Choso',
         type: 'Maldicao',
-        img: '',
+        img: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7040e917-2676-4436-838b-34c95352f75f/denaep6-fb7039ff-fe7c-48cf-ae8b-8096d21cd9cd.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcwNDBlOTE3LTI2NzYtNDQzNi04MzhiLTM0Yzk1MzUyZjc1ZlwvZGVuYWVwNi1mYjcwMzlmZi1mZTdjLTQ4Y2YtYWU4Yi04MDk2ZDIxY2Q5Y2QucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gH3Iabps7rmbrH9VewLeMJD5bUvBZO0nGsglNXIoANI',
         typeDescription: 'Tecnica Amaldicoada',
         description: 'Manipulacao sanguinea e Trombose',
         atk: 95,
         def: 95,
         level: 'Especial'
-    },
-    {
-        id: 25,
-        name: 'Dragao Arco-iris',
-        type: 'Maldicao',
-        img: '',
-        typeDescription: 'Invocacao',
-        description: 'Invocacao do Suguru Geto',
-        atk: 50,
-        def: 140,
-        level: 'Especial'
-    },
-    {
-        id: 26,
-        name: 'Cao divino: Totalidade',
-        type: 'Maldicao',
-        img: '',
-        typeDescription: 'Invocacao',
-        description: 'Invocacao das 10 sombras',
-        atk: 100,
-        def: 50,
-        level: 'Primeiro'
-    },
-    {
-        id: 27,
-        name: 'Cabeca de Mosca',
-        type: 'Maldicao',
-        img: '',
-        typeDescription: 'Tecnica Amaldicoada',
-        description: 'Nao tem',
-        atk: 1,
-        def: 1,
-        level: 'Quarto'
-    },
+    }
 ]
