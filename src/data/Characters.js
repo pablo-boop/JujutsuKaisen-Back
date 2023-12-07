@@ -5,7 +5,7 @@ export const characters = [
         id: 1, // A propriedade "id" é um identificador único para cada personagem.
         name: 'Satoru Gojo', // A propriedade "name" é o nome do personagem.
         type: 'Feiticeiro', // A propriedade "type" é o tipo do personagem.
-        img: 'https://upload.wikimedia.org/wikipedia/pt/0/02/Satoru_Gojo.png', // A propriedade "img" é a URL de uma imagem do personagem.
+        img: 'https://ongpng.com/wp-content/uploads/2023/09/gojo-satoru-1.png', // A propriedade "img" é a URL de uma imagem do personagem.
         typeDescription:'Tecnica Amaldicoada', // A propriedade "typeDescription" descreve o tipo do personagem.
         description: 'Ilimitado e Six-eye', // A propriedade "description" é uma descrição do personagem.
         atk: 150, // A propriedade "atk" é o valor de ataque do personagem.
@@ -149,7 +149,7 @@ export const characters = [
         id: 14,
         name: 'Ultimate Mechamaru',
         type: 'Feiticeiro',
-        img: 'https://cdn.shopify.com/s/files/1/0561/3086/3278/files/Yuji_holding_the_Mechamaru_communicator.png?v=1638569526',
+        img: 'https://pbs.twimg.com/media/EsazLJVXcAEVZy4.png',
         typeDescription:'Tecnica Amaldicoada',
         description: 'Liberacao da Espada e Canhao Definitivo',
         atk: 80,
@@ -182,7 +182,7 @@ export const characters = [
         id: 17,
         name: 'Mai Zenin',
         type: 'Feiticeiro',
-        img: 'https://static.tvtropes.org/pmwiki/pub/images/mai_zenin.png',
+        img: 'https://pbs.twimg.com/media/Er8TdHEUwAAe96l.png',
         typeDescription:'Tecnica Amaldicoada',
         description: 'A Criacao',
         atk: 40,
@@ -193,7 +193,7 @@ export const characters = [
         id: 18,
         name: 'Noritoshi Kamo',
         type: 'Feiticeiro',
-        img: 'https://i.pinimg.com/originals/0a/18/5f/0a185f51cdabe9ed487c23db9d5a46d6.png',
+        img: 'https://static.tvtropes.org/pmwiki/pub/images/noritoshi_kamo.png',
         typeDescription:'Tecnica Amaldicoada',
         description: 'Manipulacao Sanguinea',
         atk: 75,
@@ -204,7 +204,7 @@ export const characters = [
         id: 19,
         name: 'Mahoraga',
         type: 'Maldicao',
-        img: 'https://static.wikia.nocookie.net/jujutsu-kaisen/images/3/37/Mahoraga_using_the_Sword_of_Extermination.png/revision/latest?cb=20210428205921',
+        img: 'https://tiermaker.com/images/template_images/2022/16227223/jujutsu-kaisen-characters-chapter-237-16227223/mahoraga.png',
         typeDescription: 'Invocacao',
         description: 'Invocacao suprema das 10 sombras',
         atk: 150,
@@ -215,7 +215,7 @@ export const characters = [
         id: 20,
         name: 'Mahito',
         type: 'Maldicao',
-        img: 'https://static.zerochan.net/Mahito.%28Jujutsu.Kaisen%29.full.3395269.png',
+        img: 'https://cdn141.picsart.com/348990022008211.png',
         typeDescription: 'Tecnica Amaldicoada',
         description: 'Transfiguracao Inerte',
         atk: 105,
@@ -256,7 +256,7 @@ export const characters = [
         level: 'Especial'
     },
     {
-        id: 24,
+        id: 23,
         name: 'Choso',
         type: 'Maldicao',
         img: 'https://pbs.twimg.com/profile_images/1713279536740126720/Dq918jMi_400x400.png',
