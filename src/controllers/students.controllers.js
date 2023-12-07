@@ -1,8 +1,19 @@
 // Importando as classes Student e StudentList do módulo Students.js
 import { Student, StudentList } from "../models/Students/Students.js";
+import { students } from "../data/Students.js";
 
 // Criando uma nova lista de estudantes
 const list = new StudentList();
+
+students.forEach((student) => {
+    const newStudent = new Student(
+        student.name,
+        student.age,
+        student.email,
+        student.description
+    )
+    list.addStudent(newStudent)
+})
 
 // Função para obter todos os estudantes
 export const getAllStudent = (req, res) => {

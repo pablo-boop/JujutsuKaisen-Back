@@ -1,5 +1,5 @@
 // Declaração de um array chamado 'students'. Cada elemento do array é um objeto que representa um estudante.
-const students = [
+export const students = [
     {
         name: "Caio Ciccarelli", // Propriedade 'name' que guarda o nome do estudante
         age: 16, // Propriedade 'age' que guarda a idade do estudante
