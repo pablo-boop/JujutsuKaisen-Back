@@ -171,7 +171,7 @@ export const characters = [
         id: 16,
         name: 'Kasumi Miwa(Pobre)',
         type: 'Feiticeiro',
-        img: 'https://static.wikia.nocookie.net/jujutsu-kaisen/images/a/a9/Kasumi_Miwa.png/revision/latest/scale-to-width/360?cb=20200630000038',
+        img: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a03fe64e-a7a7-47b7-aa02-9ab69b4d7c96/denoaw9-e9226b23-b33d-45a5-aebc-9a096d1d7d05.png/v1/fill/w_766,h_1043/miwaaaaa_by_towa_mmd_denoaw9-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcL2EwM2ZlNjRlLWE3YTctNDdiNy1hYTAyLTlhYjY5YjRkN2M5NlwvZGVub2F3OS1lOTIyNmIyMy1iMzNkLTQ1YTUtYWViYy05YTA5NmQxZDdkMDUucG5nIiwid2lkdGgiOiI8PTc5MyJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.8KUS9jG3i43Mc74GpXkaVttmJ-feYNtVIdLmzfF4_SE',
         typeDescription:'Tecnica Amaldicoada',
         description: 'Novo Estilo da Sombra',
         atk: 30,
